@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Pistola's Hot-Dog| Delivery em Barra do Garças</title>
+<meta name="description" content="O melhor hot dog de Barra do Garças. Monte seu pedido e receba em casa!">
+
+<!-- Emoji do cachorro-quente -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌭</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Loading inicial -->
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-content">
+    <div class="loading-logo">
+      <span class="loading-bun">🌭</span>
+    </div>
+    <p class="loading-text">Pistolas <span>Hot-Dog</span></p>
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- Barra de navegação -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#hero" class="navbar-logo">
+      <span class="logo-icon">🌭</span>
+      <span class="logo-text">Pistola's <strong>Hot-Dog</strong></span>
+    </a>
+
+    <nav class="navbar-links" id="navbar-links">
+      <a href="#tradicionais" class="nav-link">Tradicionais</a>
+      <a href="#especiais" class="nav-link">Especiais</a>
+      <a href="#prensados" class="nav-link">Prensados</a>
+      <a href="#bebidas" class="nav-link">Bebidas</a>
+      <a href="#adicionais" class="nav-link">Adicionais</a>
+    </nav>
+
+    <div class="navbar-actions">
+      <button class="cart-icon-btn" id="open-cart-btn" aria-label="Abrir carrinho">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span class="cart-badge" id="cart-badge-nav">0</span>
+      </button>
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Overlay Celular -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay">
+  <a href="#tradicionais" class="mobile-link">Tradicionais</a>
+  <a href="#especiais" class="mobile-link">Especiais</a>
+  <a href="#prensados" class="mobile-link">Prensados</a>
+  <a href="#bebidas" class="mobile-link">Bebidas</a>
+  <a href="#adicionais" class="mobile-link">Adicionais</a>
+  <a href="#contato" class="mobile-link">Contato</a>
+</div>
+
+<main>
+  <!-- Seção hero-->
+  <section class="hero" id="hero">
+    <div class="hero-bg-pattern" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">@pistolashotdog · Barra do Garças</div>
+      <div class="hero-logo-wrap">
+        <span class="hero-emoji" aria-hidden="true">🌭</span>
+      </div>
+      <h1 class="hero-title">PISTOLA'S<br><span>HOT DOG</span></h1>
+      <p class="hero-slogan">O melhor hot dog de Barra do Garças.</p>
+      <a href="#tradicionais" class="btn btn-primary hero-cta">
+        Fazer Pedido
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+      </a>
+
+      <div class="hero-promo">
+        <div class="hero-promo-tag">★ Destaque da casa</div>
+        <p><strong>Pistola Defumado</strong> — frango defumado artesanal + cream cheese. A receita que dá nome à casa.</p>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <div class="menu-wrapper">
+
+    <section class="menu-section" id="tradicionais">
+      <div class="section-header">
+        <span class="section-eyebrow">No pão, do jeito clássico</span>
+        <h2 class="section-title">Tradicionais</h2>
+      </div>
+      <div class="products-grid" id="grid-tradicionais"></div>
+    </section>
+
+    <section class="menu-section menu-section--dark" id="especiais">
+      <div class="section-header">
+        <span class="section-eyebrow">A casa de pistolas</span>
+        <h2 class="section-title">Especiais</h2>
+      </div>
+      <div class="products-grid" id="grid-especiais"></div>
+    </section>
+
+    <section class="menu-section" id="prensados">
+      <div class="section-header">
+        <span class="section-eyebrow">Pão de 20cm, prensado na hora</span>
+        <h2 class="section-title">Prensados</h2>
+      </div>
+      <div class="products-grid" id="grid-prensados"></div>
+    </section>
+
+    <section class="menu-section menu-section--dark" id="bebidas">
+      <div class="section-header">
+        <span class="section-eyebrow">Pra acompanhar</span>
+        <h2 class="section-title">Bebidas</h2>
+      </div>
+      <div class="products-grid products-grid--compact" id="grid-bebidas"></div>
+    </section>
+
+    <section class="menu-section" id="adicionais">
+      <div class="section-header">
+        <span class="section-eyebrow">Deixe do seu jeito</span>
+        <h2 class="section-title">Adicionais</h2>
+      </div>
+      <div class="products-grid products-grid--compact" id="grid-adicionais"></div>
+    </section>
+
+  </div>
+
+  <!--  FOOTER / CONTATO -->
+  <footer class="footer" id="contato">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">🌭</span>
+        <span class="logo-text">Pistola's <strong>Hot Dog</strong></span>
+      </div>
+      <p class="footer-address">Rua Primeiro de Maio, 401 - Setor Cidade Velha<br>Barra do Garças - MT</p>
+      <p class="footer-social">@pistolashotdog</p>
+      <p class="footer-phone">(66) 98136-0539</p>
+      <p class="footer-copy">© <span id="year"></span> Pistola's Hot Dog. Feito com pão, molho e fé.</p>
+    </div>
+  </footer>
+</main>
+
+<!-- BOTÃO WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5566981360539" target="_blank" rel="noopener" class="whatsapp-fab" id="whatsapp-fab" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.001 3.2C8.929 3.2 3.2 8.929 3.2 16c0 2.503.713 4.84 1.949 6.823L3.2 28.8l6.135-1.91A12.74 12.74 0 0 0 16 28.8c7.072 0 12.8-5.728 12.8-12.8S23.073 3.2 16.001 3.2zm0 23.273a10.42 10.42 0 0 1-5.32-1.456l-.382-.227-3.954 1.232 1.26-3.857-.249-.396a10.43 10.43 0 0 1-1.628-5.569c0-5.79 4.71-10.5 10.5-10.5s10.5 4.71 10.5 10.5-4.71 10.5-10.5 10.5z"/><path d="M21.69 18.49c-.3-.15-1.77-.873-2.043-.973-.273-.1-.473-.15-.673.15s-.773.973-.948 1.173c-.174.2-.348.225-.648.075-.3-.15-1.266-.467-2.412-1.488-.892-.795-1.494-1.777-1.668-2.077-.174-.3-.018-.462.131-.611.135-.134.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.673-1.62-.922-2.22-.243-.583-.49-.504-.673-.513l-.573-.01c-.2 0-.524.075-.798.375s-1.048 1.024-1.048 2.497 1.073 2.895 1.223 3.095c.15.2 2.112 3.225 5.117 4.523.715.309 1.273.493 1.708.631.717.228 1.37.196 1.886.119.575-.086 1.77-.724 2.02-1.423.249-.7.249-1.298.174-1.423-.075-.125-.273-.2-.573-.35z"/></svg>
+</a>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+  <span id="toast-message">Item adicionado!</span>
+</div>
+
+<!-- ===== CARRINHO FLUTUANTE (barra inferior) ===== -->
+<div class="cart-bar" id="cart-bar">
+  <button class="cart-bar-btn" id="cart-bar-btn">
+    <span class="cart-bar-count" id="cart-bar-count">0</span>
+    <span class="cart-bar-label">Ver carrinho</span>
+    <span class="cart-bar-total" id="cart-bar-total">R$ 0,00</span>
+  </button>
+</div>
+
+<!-- ===== DRAWER DO CARRINHO ===== -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" aria-label="Carrinho de compras">
+  <div class="cart-drawer-header">
+    <h3>Seu pedido</h3>
+    <button class="icon-btn" id="close-cart-btn" aria-label="Fechar carrinho">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+    </button>
+  </div>
+
+  <div class="cart-drawer-body" id="cart-drawer-body">
+    <!-- itens injetados via JS -->
+    <div class="cart-empty" id="cart-empty">
+      <span class="cart-empty-emoji">🛒</span>
+      <p>Seu carrinho está vazio.</p>
+      <p class="cart-empty-sub">Adicione algo gostoso do nosso cardápio!</p>
+    </div>
+  </div>
+
+  <div class="cart-drawer-footer" id="cart-drawer-footer">
+    <div class="cart-summary-row">
+      <span>Subtotal</span>
+      <span id="cart-subtotal">R$ 0,00</span>
+    </div>
+    <div class="cart-summary-row cart-summary-total">
+      <span>Total</span>
+      <span id="cart-total">R$ 0,00</span>
+    </div>
+    <button class="btn btn-primary btn-block" id="checkout-btn">Finalizar Pedido</button>
+  </div>
+</aside>
+
+<!-- ===== MODAL DE CHECKOUT ===== -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-header">
+      <h3 id="modal-title">Finalizar pedido</h3>
+      <button class="icon-btn" id="close-modal-btn" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <form class="modal-body" id="checkout-form">
+      <div class="form-group">
+        <label for="f-nome">Nome completo *</label>
+        <input type="text" id="f-nome" name="nome" placeholder="Seu nome" required>
+      </div>
+
+      <div class="form-group">
+        <label for="f-telefone">Telefone / WhatsApp *</label>
+        <input type="tel" id="f-telefone" name="telefone" placeholder="(66) 99999-9999" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group form-group--grow">
+          <label for="f-endereco">Endereço *</label>
+          <input type="text" id="f-endereco" name="endereco" placeholder="Rua, avenida..." required>
+        </div>
+        <div class="form-group form-group--small">
+          <label for="f-numero">Número *</label>
+          <input type="text" id="f-numero" name="numero" placeholder="123" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="f-bairro">Bairro *</label>
+        <input type="text" id="f-bairro" name="bairro" placeholder="Seu bairro" required>
+      </div>
+
+      <div class="form-group">
+        <label for="f-referencia">Ponto de referência</label>
+        <input type="text" id="f-referencia" name="referencia" placeholder="Próximo a..., portão azul...">
+      </div>
+
+      <div class="form-group">
+        <label>Forma de pagamento *</label>
+        <div class="payment-options">
+          <label class="payment-option">
+            <input type="radio" name="pagamento" value="Dinheiro" required>
+            <span class="payment-icon">💵</span>
+            <span>Dinheiro</span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="pagamento" value="PIX" required>
+            <span class="payment-icon">⚡</span>
+            <span>PIX</span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="pagamento" value="Cartão" required>
+            <span class="payment-icon">💳</span>
+            <span>Cartão</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group" id="troco-group" hidden>
+        <label for="f-troco">Troco para quanto?</label>
+        <input type="text" id="f-troco" name="troco" placeholder="Ex: R$ 50,00">
+      </div>
+
+      <div class="form-group">
+        <label for="f-obs">Observações</label>
+        <textarea id="f-obs" name="observacoes" rows="2" placeholder="Ex: sem milho, capricha no molho..."></textarea>
+      </div>
+
+      <div class="modal-order-summary" id="modal-order-summary">
+        <!-- resumo do pedido injetado via JS -->
+      </div>
+
+      <button type="submit" class="btn btn-whatsapp btn-block">
+        <svg viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path d="M16.001 3.2C8.929 3.2 3.2 8.929 3.2 16c0 2.503.713 4.84 1.949 6.823L3.2 28.8l6.135-1.91A12.74 12.74 0 0 0 16 28.8c7.072 0 12.8-5.728 12.8-12.8S23.073 3.2 16.001 3.2zm0 23.273a10.42 10.42 0 0 1-5.32-1.456l-.382-.227-3.954 1.232 1.26-3.857-.249-.396a10.43 10.43 0 0 1-1.628-5.569c0-5.79 4.71-10.5 10.5-10.5s10.5 4.71 10.5 10.5-4.71 10.5-10.5 10.5z"/></svg>
+        Enviar pedido no WhatsApp
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== MODAL DE PERSONALIZAÇÃO DO PRODUTO ===== -->
+<div class="modal-overlay" id="product-modal-overlay">
+  <div class="modal modal--product" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
+    <div class="modal-header">
+      <h3 id="product-modal-title">Item</h3>
+      <button class="icon-btn" id="close-product-modal-btn" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="product-modal-body">
+      <!-- conteúdo injetado via JS -->
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
